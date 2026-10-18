@@ -116,9 +116,10 @@
 | 列 | 型 | 説明 |
 |---|---|---|
 | kind | text | `collect` / `verify` / `fix` |
-| actor_type | text | `ai` / `human` |
+| actor_type | text | `ai` / `human` / `script`(AI の判断を含まない決まった処理。例: Wikidata から骨格を取るスクリプト) |
 | actor_name | text | AI の提供元、または人の名前 |
 | model_id | text null | **モデルID(バージョンまで)**。実行側が自動記録 |
+| model_id_source | text | `session`(セッション情報から) / `unknown`(わからない。推測で書かない) / `script`(スクリプトなので該当なし) |
 | tool | text null | 例: Claude Code |
 | skill_name | text null | |
 | skill_version | text null | |
@@ -286,4 +287,5 @@ iPhone から出した依頼を、PC の Claude Code が取り出して処理す
 - GitHub 上のリポジトリの作成(名前は `info-curator`、公開)。
 - 収集の骨格の入手元の詳細(Wikidata から戦いの項目と座標を取る範囲)。
 - 検証スキルの仕様(入力・出力・各項目の判定ルール)。
+- 収集スキル(`.claude/skills/collect/`)の `basics` 以降の段階(AI が文章を読んで集める部分)の、実データでの試運転。
 - アプリ(PWA)の画面設計。

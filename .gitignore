@@ -21,3 +21,7 @@ backups/
 Thumbs.db
 desktop.ini
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
