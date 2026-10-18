@@ -1,0 +1,23 @@
+# 秘密情報(絶対にコミットしない)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+service-account*.json
+credentials*.json
+token*.json
+
+# 収集データ・生データ・バックアップ(GitHub には置かない。DB の正は Supabase)
+raw/
+data/
+backups/
+*.zip
+*.sqlite
+*.dump
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
